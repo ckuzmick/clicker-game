@@ -3,19 +3,23 @@
     height: 100px;
     cursor: pointer;
     transition: all 0.2s ease-in-out;
+    font-family: serif;
+    background-color: #e8e8e8;
 }
 
 #clicker:active {
     width: 90px;
     height: 90px;
+    margin-top: 10px;
+    background: #e8e8e8;
 }
 
 #score {
     font-size: 40px;
-    font-family: sans-serif;
     color: #000000;
     text-align: center;
     padding-bottom: 20px;
+    font-weight: bold;
 }
 
 body {
