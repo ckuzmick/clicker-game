@@ -2,6 +2,8 @@ var score = 0;
 var scoreDiv = document.getElementById("score");
 var clickIncrement = 1;
 var autoIncrement = 0;
+var autoIncrementCost = 10;
+var clickIncrementCost = 10;
 
 function clicker() {
     score += clickIncrement;
@@ -14,15 +16,36 @@ function auto() {
 }
 
 function upgradeClick() {
-    clickIncrement += 2;
+    if (score >= clickIncrementCost) {
+        score -= clickIncrementCost;
+        clickIncrementCost *= 1.1;
+        clickIncrement += 2;
+    }
 }
 
 function upgradeAuto() {
-    autoIncrement += 0.01;
+    if (score >= autoIncrementCost) {
+        score -= autoIncrementCost;
+        autoIncrementCost *= 1.1;
+        autoIncrement += 0.01;
+    }
 }
 
 function update() {
     scoreDiv.innerHTML = Math.floor(score);
+
+    if (score >= clickIncrementCost) {
+        document.getElementById("upgrade-clicker").style.color = "black";
+    } else {
+        document.getElementById("upgrade-clicker").style.color = "grey";
+    
+    }
+
+    if (score >= autoIncrementCost) {
+        document.getElementById("upgrade-auto").style.color = "black";
+    } else {
+        document.getElementById("upgrade-auto").style.color = "grey";   
+    }
 }
 
 setInterval(update, 10);
