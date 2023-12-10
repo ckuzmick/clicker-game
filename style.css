@@ -10,14 +10,13 @@
 #clicker:active {
     width: 90px;
     height: 90px;
-    margin-top: 10px;
+    margin: 5px;
     background: #e8e8e8;
 }
 
 #score {
     font-size: 40px;
     color: #000000;
-    text-align: center;
     padding-bottom: 20px;
     font-weight: bold;
 }
@@ -25,7 +24,25 @@
 body {
     background-color: #FFFFFF;
     display: grid;
-    justify-content: center;
-    align-items: center;
+    grid-template-columns: 1fr 400px;
+}
+
+.clicker-container {
+    padding: 20px;
+}
+
+.upgrades-container {
     height: 100dvh;
+    padding: 20px;
+}
+
+#upgrade {
+    height: 100px;
+    font-size: 20px;
+    background: #e8e8e8;
+    margin-bottom: 10px;
+    padding: 20px;
+    width: 100%;
+    border: none;
+    cursor: pointer;
 }

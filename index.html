@@ -7,10 +7,14 @@
     <link rel="stylesheet" href="./style.css">
 </head>
 <body>
-<div>
-    <div id="score">0</div>
-    <button id="clicker" onclick="clicker()">Click Me!</button>
-</div>
+    <div class="clicker-container">
+        <div id="score">0</div>
+        <button id="clicker" onclick="clicker()">Click</button>
+    </div>
+    <div class="upgrades-container">
+        <button id="upgrade" onclick="upgradeAuto()" >You don't even have to click</button>
+        <button id="upgrade" onclick="upgradeClick()" >Click go better and faster</button>
+    </div>
 </body>
 <script src="./script.js"></script>
 </html>
