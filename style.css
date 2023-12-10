@@ -48,3 +48,7 @@ body {
     color: gray;
     font-family: serif;
 }
+
+p {
+    margin: 0;
+}

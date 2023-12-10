@@ -5,6 +5,9 @@ var autoIncrement = 0;
 var autoIncrementCost = 10;
 var clickIncrementCost = 10;
 
+document.getElementById("auto-cost").innerHTML = "Cost: " + Math.floor(autoIncrementCost);
+document.getElementById("clicker-cost").innerHTML = "Cost: " + Math.floor(clickIncrementCost);
+
 function clicker() {
     score += clickIncrement;
     console.log(score)
@@ -21,13 +24,19 @@ function upgradeClick() {
         clickIncrementCost *= 1.1;
         clickIncrement += 2;
     }
+    document.getElementById("clicker-cost").innerHTML = Math.floor(clickIncrementCost);
 }
 
 function upgradeAuto() {
     if (score >= autoIncrementCost) {
         score -= autoIncrementCost;
         autoIncrementCost *= 1.1;
-        autoIncrement += 0.01;
+        if (autoIncrement < .1) {
+            autoIncrement += 0.01;
+        } else {
+            autoIncrement *= 1.1;
+        }
+        document.getElementById("auto-cost").innerHTML = Math.floor(autoIncrementCost);
     }
 }
 
